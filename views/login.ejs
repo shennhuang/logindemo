@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login...</title>
+    </head>
+    <body>
+        
+        <div style = "border : solid 1px red">
+            <form action = "/login" method = "post">
+                <h1>LOGIN IN</h1>
+                <font class = "error" color = "red"></font>
+                </br>
+                <font>username:</font>
+                </br>
+                <input type = "text" name = "username" placeholder = "username">
+                </br>
+                <font>password:</font>
+                </br>
+                <input type = "text" name = "psd" placeholder = "password">
+                </br>
+                <a href = "/signup">sign up<a>
+                <input type = "submit" value = "LOGIN"/>
+            </form>
+             <script>
+                var err = "<%= err %>";
+                console.log(document.getElementsByClassName("error")[0].innerHTML)
+                if(!!err) document.getElementsByClassName("error")[0].innerHTML = err;
+                
+            </script>
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login...</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+    <body>
+        
+        <div style = "border : solid 1px red">
+            <form class = "submitform" action = "/signup" method = "post">
+                <h1>SIGN UP</h1>
+                <font class = "error" color = "red"></font>
+                </br>
+                <font>username:</font>
+                </br>
+                <input type = "text" name = "username" placeholder = "your name"></input>
+                </br>
+                <font>password:</font>
+                </br>
+                <input type = "text" name = "psd" placeholder = "your password"></input>
+                </br>
+                <font>confirm password:</font>
+                </br>
+                <input type = "text" name = "cpsd" placeholder = "your password again"></input>
+                </br>
+                
+                <input type = "button" value = "cancle" onclick = "location.href='/'">
+                <input type = "button" id = "submit_btn"value = "SUBMIT"/>
+            </form>
+            <script>
+                var err = "<%= err %>";
+                console.log(document.getElementsByClassName("error")[0].innerHTML)
+                if(!!err) document.getElementsByClassName("error")[0].innerHTML = err;
+                
+                $("#submit_btn").click(function(){
+                    var username = document.getElementsByName("username")[0].value
+                    var psd = document.getElementsByName("psd")[0].value
+                    if(username == ""){
+                        document.getElementsByClassName("error")[0].innerHTML = "username can not empty";
+                        return;
+                    }
+                    if(psd == ""){ 
+                        document.getElementsByClassName("error")[0].innerHTML = "password can not empty";
+                        return;
+                    }
+
+                    document.getElementsByClassName("submitform")[0].submit();
+                })
+            </script>
+        </div>
+
+    </body>
+</html>
